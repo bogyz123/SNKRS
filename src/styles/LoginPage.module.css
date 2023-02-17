@@ -1,0 +1,46 @@
+.loginContainer {
+    width: fit-content;
+    border-radius: 10px;
+    padding: 1.5rem 2rem;
+    width: 15vw;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    text-align: center;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+    color: #fff;
+    margin: auto;
+    background-color: rgba(1, 1, 1, .5);
+    font-size: 1.1rem;
+    min-width: 300px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 10px; 
+    background-color: transparent;
+    border: 1px solid #ccc;
+    outline: none;
+    color: white;
+    font-family: 'Rubik', sans-serif;
+    width: 100%;
+    font-size: 1.05rem
+
+
+}
+
+::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+
+input:focus-visible {
+    border: 1px solid black;
+}
+
+#signup {
+    color: orangered;
+    cursor: pointer;
+}

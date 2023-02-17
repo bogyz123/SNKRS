@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+
+#container {
+    font-family: 'PT Sans', sans-serif;
+    background: rgb(167, 38, 140);
+    background: linear-gradient(115deg, rgba(167, 38, 140, 1) 0%, rgba(103, 212, 213, 1) 100%);
+    color: white;
+    font-family: 'Rubik', sans-serif;
+}
+
+
+#filterContainer {
+    background-color: rgb(247, 182, 159);
+    width: fit-content;
+    border-radius: 10px;
+    padding: 10px;
+    position: absolute;
+    z-index: 100;
+    right: 10%;
+
+}
+
+#underline {
+    text-decoration: underline;
+}
+
+#heroText {
+    letter-spacing: 1.1px;
+    font-size: 2.3rem;
+}
+
+#heroGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 6rem;
+
+}
+
+#heroContent {
+    padding-left: 4.5rem;
+    width: fit-content;
+    animation: slide-in .8s ease-in forwards;
+}
+
+@keyframes slide-in {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  }
+
+#sneakerImage {
+    padding-right: 1rem;
+    display: flex;
+    justify-content: start;
+    width: fit-content;
+    animation: slide-right 1s ease-in forwards;
+}
+@keyframes slide-right {
+    from {
+        transform: translateX(200%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+#sneakerImage img {
+    object-fit: cover;
+    min-width: 200px;
+    width: 30vw;
+}
+
+#filterIcon {
+    position: relative;
+    width: fit-content;
+    margin-inline: auto;
+}
+
+
+
+#popularContainer h1 {
+    letter-spacing: 1px;
+}
+#popularContainer {
+    margin: 5rem 0;
+}
+
+
+@media screen and (max-width: 1255px) {
+    #filterIcon {
+        margin-inline: auto;
+        column-gap: 1rem;
+    }
+
+    html {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 999px) {
+    #heroGrid {
+        grid-template-columns: 1fr;
+    }
+
+    #sneakerImage {
+        margin-inline: auto;
+    }
+
+    html {
+        font-size: 14px;
+    }
+}

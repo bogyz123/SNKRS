@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
+
+.grad {
+    background: linear-gradient(115deg, rgba(167, 38, 140, 1) 0%, rgba(103, 212, 213, 1) 100%);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.center {
+    text-align: center;
+}
+
+.CardElement {
+    box-sizing: border-box;
+    height: 40px;
+    padding: 10px 12px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+
+}
+
+.btn-third {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px 0;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.CardElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.CardElement--invalid {
+    border-color: #fa755a;
+}
+
+.CardElement--webkit-autofill {
+    background-color: #fefde5 !important;
+}
+
+.productList {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    padding-inline:2rem;
+}
+
+.test {
+    background-color: red;
+}
+
+.flex {
+    display: flex;
+}
+
+.flexCol {
+    flex-direction: column;
+}
+
+.centerX {
+    justify-content: center;
+}
+
+.centerY {
+    align-items: center;
+}
+
+.btn-primary {
+
+    background-color: white;
+    color: purple;
+    padding: 13px 28px;
+    border-radius: .35rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    width: fit-content;
+
+}
+
+.btn-secondary {
+    background-color: purple;
+    color: #fff;
+    padding: 5px 15px;
+    font-family: 'Rubik', sans-serif;
+    border: none;
+    border-radius: .45rem;
+    cursor: pointer;
+}
+
+.hoverable {
+    cursor: pointer;
+}
+
+.gap {
+    gap: 5px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.input-primary {
+    padding: .8rem;
+    color: black;
+    border: 1px solid black;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.05rem;
+    width: fit-content;
+}
+
+.gradient {
+    background: linear-gradient(115deg, rgba(167, 38, 140, 1) 0%, rgba(103, 212, 213, 1) 100%);
+}
+
+
+
+.skeleton-text {
+    animation: skeleton .7s linear infinite alternate;
+    width: 100px;
+    height: 5px;
+
+}
+
+@keyframes skeleton {
+    0% {
+        background-color: hsl(200, 20%, 70%);
+    }
+
+    100% {
+        background-color: hsl(200, 20%, 95%);
+    }
+}

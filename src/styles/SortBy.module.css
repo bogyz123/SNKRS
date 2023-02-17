@@ -1,0 +1,27 @@
+#container {
+    background: rgb(61, 61, 61);
+    font-family: 'Rubik', sans-serif;
+    width: fit-content;
+    padding: .5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    color: white;
+}
+
+#hasSizeInput {
+    height: 1vw;
+    width: 2vw;
+    color: white;
+    border-radius: .35em;
+    padding: 5px;
+    text-align: center;
+}
+
+.option:hover {
+    transform: scale(1.1);
+    color: red;
+    text-shadow: 1px 1px 1px #000;
+    transition: transform 0.3s ease-in-out, color 0.2s ease-in-out, background-color 0.2s ease-in-out, text-shadow 0.2s ease-in-out, border 0.2s ease-in-out;
+    cursor: pointer;
+}

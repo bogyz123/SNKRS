@@ -1,0 +1,41 @@
+#container {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.2rem;
+    height: 100%;
+    background: rgb(216, 216, 216);
+    display: flex;
+}
+
+#formsContainer {
+    width: fit-content;
+    padding: 3rem 5rem;
+    background-color: white;
+    -webkit-box-shadow: 9px 10px 14px -1px rgba(255, 186, 255, 1);
+    -moz-box-shadow: 9px 10px 14px -1px rgba(255, 186, 255, 1);
+    box-shadow: 9px 10px 14px -1px rgba(255, 186, 255, 1);
+    margin: 1rem;
+    border-radius: .5rem;
+    height: 90%;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+#help {
+    padding: 2rem 6rem;
+}
+
+@media screen and (max-width: 900px) {
+    #container {
+        flex-direction: column;
+    }
+
+    #formsContainer {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        padding: 1rem 3rem;
+    }
+}

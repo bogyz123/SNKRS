@@ -1,0 +1,114 @@
+#container {
+    min-height: 100vh !important;
+    color: #fff;
+    font-family: 'Rubik', sans-serif;
+
+}
+
+
+#mainGrid {
+    background-color: rgb(255, 255, 255, .2);
+    color: rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+#infoGrid {
+    width: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .8rem;
+}
+
+#clearList {
+    margin-left: auto;
+}
+
+
+
+#sizesContainer {
+    background-color: crimson;
+    display: flex;
+    column-gap: 5px;
+    flex-wrap: wrap;
+    max-width: 250px;
+    border-radius: .25rem;
+    padding: 5px;
+    margin-top: .6rem;
+}
+
+#status {
+    background-color: rgb(255, 69, 0);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+}
+
+#status img {
+    max-width: 50px;
+    width: 7vw;
+}
+
+#footer {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: auto;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+}
+
+#footer div {
+    flex: 1;
+    max-width: 15rem;
+    border-radius: 50px;
+    padding: 1.3rem 0rem;
+}
+
+.statusContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.statusContainer p {
+    color: rgb(187, 255, 0);
+}
+
+.statusContainer img {
+    max-width: 100px;
+}
+
+#newProduct {
+    background-color: rgb(255, 255, 255, .2);
+    color: white;
+    padding: 4rem;
+}
+
+#newContainer {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    width: fit-content;
+    background-color: rgb(255, 255, 255, .2);
+    border-radius: .45rem;
+    padding: 5rem
+}
+
+#newContainer h1 {
+    margin-left: 2.5rem;
+}
+
+.newItem {
+    border-radius: .50rem;
+    width: fit-content;
+
+
+}
+
+#addProductBtn {
+    width: 100%;
+}

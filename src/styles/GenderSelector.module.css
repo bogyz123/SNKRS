@@ -1,0 +1,52 @@
+#genderSelectorContainer {
+    display: flex;
+    justify-content: center;
+    column-gap: 1.5rem;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.genderSelector {
+    flex-basis: 700px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 10px 2rem;
+    padding: 30px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    transition: all 0.3s ease-in-out;
+    animation: 1s fade ease-in;
+}
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.genderHeader {
+    color: rgb(179, 179, 179);
+}
+
+.genderSelector:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.genderSelector h1 {
+    font-size: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+.genderSelector:hover h1 {
+    color: lightgray;
+}
