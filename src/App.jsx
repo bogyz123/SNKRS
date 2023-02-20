@@ -46,7 +46,7 @@ function App() {
   return (
 
 
-    <BrowserRouter className='App'>
+    <BrowserRouter className='App' basename='/SNKRS'>
 
 
       {selectedProducts.length > 0 && <Cart products={selectedProducts} />}
