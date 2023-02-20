@@ -46,7 +46,7 @@ function App() {
   return (
 
 
-    <BrowserRouter className='App' basename='/SNKRS'>
+    <HashRouter className='App'>
 
 
       {selectedProducts.length > 0 && <Cart products={selectedProducts} />}
@@ -65,7 +65,7 @@ function App() {
         <Route path='/contact' element={<Contact />} />
       </Routes>
 
-    </BrowserRouter>
+    </HashRouter>
 
   )
 }
