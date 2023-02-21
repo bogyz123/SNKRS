@@ -2,7 +2,7 @@ import { getAuth, onAuthStateChanged } from '@firebase/auth';
 import { collection, doc, getDoc, getDocs } from 'firebase/firestore';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import "../src/styles/App.css";
 import Cart from './components/Cart';
 import CartPage from './components/CartPage';
@@ -46,7 +46,7 @@ function App() {
   return (
 
 
-    <HashRouter className='App'>
+    <HashRouter className='App' basename='/snkrs'>
 
 
       {selectedProducts.length > 0 && <Cart products={selectedProducts} />}
