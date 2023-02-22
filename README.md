@@ -1,7 +1,7 @@
 
 # SNKRS
 
-is a e-commerce dummy website where you can purchase your favorite sneakers!
+is a e-commerce dummy website where you can purchase your favorite sneakers! (Early build)
 
 
 ## 🔗 Link
