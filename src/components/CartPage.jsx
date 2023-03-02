@@ -6,7 +6,7 @@ import styles from "../styles/CartPage.module.css";
 import PaymentForm from "./PaymentForm";
 
 
-const stripe = loadStripe('pk_test_51MJxVYHURVmulJtgOCLx5AphOr5KkHNSMDbQfANJlKdWm4kUkNwT5HFoYrQiMysdJqiMr6tOyser377YitSvGyEG00IAbMSX2C');
+const stripe = loadStripe(import.meta.env.STRIPEID);
 const options = {
     clientSecret: ''
 }
