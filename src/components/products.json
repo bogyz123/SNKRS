@@ -1,0 +1,176 @@
+{
+  "Nike": {
+    "0": {
+      "brand": "Nike",
+      "model": "Air Force",
+      "images": {
+        "white": ["https://static.nike.com/a/images/t_default/e6da41fa-1be4-4ce5-b89c-22be4f1f02d4/air-force-1-07-mens-shoes-jBrhbr.png", "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3cc96f43-47b6-43cb-951d-d8f73bb2f912/air-force-1-07-mens-shoes-jBrhbr.png"]
+      },
+      "price": 150,
+      "colors": ["white"],
+      "gender": "unisex",
+      "id": "0"
+    },
+    "1": {
+      "brand": "Nike",
+      "model": "Dunk Low Next Nature",
+      "images": {
+        "green": ["https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/221d292a-c003-4ae5-b68d-7fc1ea3ea5f3/dunk-low-next-nature-womens-shoes-bxR0pv.png", "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/82d444b0-67d6-43fc-8f56-3bf9c94d7819/dunk-low-next-nature-womens-shoes-bxR0pv.png"]
+      },
+      "price": 110,
+      "colors": ["green"],
+      "gender": "female",
+      "id": "1"
+    },
+    "2": {
+      "brand": "Nike",
+      "model": "P-6000",
+      "images": {
+        "gray": ["https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/421a0f94-e5b8-4447-87dd-ce56b26aea1a/p-6000-shoes-XkgpKW.png", "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/13929915-59bd-4f03-9d0b-d258ed1c36b8/p-6000-shoes-XkgpKW.png"]
+      },
+      "price": 120,
+      "colors": ["gray"],
+      "gender": "unisex",
+      "id": "2"
+    },
+    "3": {
+      "brand": "Nike",
+      "model": "Revolution 6",
+      "images": {
+        "blue": ["https://m.media-amazon.com/images/I/81tWOXksBiL._AC_UX575_.jpg"],
+        "black": ["https://m.media-amazon.com/images/I/71-naTmcmBL._AC_SX575._SX._UX._SY._UY_.jpg"],
+        "red": ["https://m.media-amazon.com/images/I/81t4iZmQuWL._AC_SX575._SX._UX._SY._UY_.jpg"]
+      },
+      "price": 59,
+      "gender": "unisex",
+      "id": "3",
+      "colors": ["blue", "black", "red"]
+    }
+  },
+  "Adidas": {
+    "0": {
+      "brand": "Adidas",
+      "model": "SUPERSTAR",
+      "gender": "unisex",
+      "colors": ["white"],
+      "id": "0",
+      "price": 80,
+      "images": {
+        "white": ["https://m.media-amazon.com/images/I/71pQqs0jckL._AC_UX575_.jpg", "https://m.media-amazon.com/images/I/71AgEqcuFIL._AC_UX575_.jpg", "https://m.media-amazon.com/images/I/71M2zsAtcSL._AC_UX575_.jpg"]
+      }
+    },
+    "1": {
+      "brand": "Adidas",
+      "model": "Stan Smith",
+      "gender": "male",
+      "colors": ["white", "black"],
+      "id": "1",
+      "price": 66,
+      "images": {
+        "white": ["https://m.media-amazon.com/images/I/41jua5IBHQL._AC_SY575._SX._UX._SY._UY_.jpg"],
+        "black": ["https://m.media-amazon.com/images/I/41tn0vlnMxL._AC_SY575._SX._UX._SY._UY_.jpg"]
+      }
+    },
+    "2": {
+      "brand": "Adidas",
+      "model": "S2g Wide",
+      "gender": "male",
+      "colors": ["blue", "gray", "black"],
+      "id": "2",
+      "price": 65,
+      "images": {
+        "blue": ["https://m.media-amazon.com/images/I/81-b9NFLVcL._AC_SX575._SX._UX._SY._UY_.jpg"],
+        "gray": ["https://m.media-amazon.com/images/I/71FBY-t7AwL._AC_UX575_.jpg"],
+        "black": ["https://m.media-amazon.com/images/I/81z4Cj-G9KL._AC_SX575._SX._UX._SY._UY_.jpg"]
+      }
+    },
+    "3": {
+      "brand": "Adidas",
+      "model": "Tech Response SL 3",
+      "gender": "male",
+      "colors": ["white", "gray", "black"],
+      "id": "3",
+      "price": 65,
+      "images": {
+        "white": ["https://m.media-amazon.com/images/I/710tbvNriYL._AC_UX575_.jpg"],
+        "gray": ["https://m.media-amazon.com/images/I/71W2T2gwu9L._AC_SX575._SX._UX._SY._UY_.jpg"],
+        "black": ["https://m.media-amazon.com/images/I/71hNDEg6qgL._AC_SX575._SX._UX._SY._UY_.jpg"]
+      }
+    },
+    "4": {
+      "brand": "Adidas",
+      "model": "Zx 1k Boost",
+      "gender": "male",
+      "colors": ["white", "gray", "black", "yellow"],
+      "id": "4",
+      "price": 80,
+      "images": {
+        "white": ["https://m.media-amazon.com/images/I/71GDiAlwtkL._AC_SX575._SX._UX._SY._UY_.jpg"],
+        "gray": ["https://m.media-amazon.com/images/I/71Sk2Y2HZaL._AC_SX575._SX._UX._SY._UY_.jpg"],
+        "black": ["https://m.media-amazon.com/images/I/7196ZNP77TL._AC_SX575._SX._UX._SY._UY_.jpg"],
+        "yellow": ["https://m.media-amazon.com/images/I/71mIWbhxvBS._AC_SX575._SX._UX._SY._UY_.jpg"]
+      }
+    },
+    "5": {
+      "brand": "Adidas",
+      "model": "Adizero Boston",
+      "gender": "male",
+      "colors": ["black", "blue", "lime"],
+      "id": "5",
+      "price": 82,
+      "images": {
+        "black": ["https://m.media-amazon.com/images/I/71vArBHd09L._AC_UX575_.jpg"],
+        "blue": ["https://m.media-amazon.com/images/I/71ibJNFQhuL._AC_SX575._SX._UX._SY._UY_.jpg"],
+        "lime": ["https://m.media-amazon.com/images/I/41x7IF9J+VL._AC_SY575._SX._UX._SY._UY_.jpg", "https://m.media-amazon.com/images/I/514DuIb2ybL._AC_SX575._SX._UX._SY._UY_.jpg"]
+      }
+    }
+  },
+  "Rebook": {
+    "0": {
+      "brand": "Rebook",
+      "model": "Club C 85",
+      "gender": "male",
+      "colors": ["white"],
+      "id": "0",
+      "price": 54,
+      "images": {
+        "white": ["https://m.media-amazon.com/images/I/71TQe48xt1L._AC_UX575_.jpg"]
+      }
+    },
+    "1": {
+      "brand": "Rebook",
+      "model": "Club MEMT",
+      "gender": "male",
+      "colors": ["white", "black"],
+      "id": "1",
+      "price": 65,
+      "images": {
+        "white": ["https://m.media-amazon.com/images/I/510uJCDdpCL._AC_UY575_.jpg"],
+        "black": ["https://m.media-amazon.com/images/I/71wp6GsgYjL._AC_SX575._SX._UX._SY._UY_.jpg"]
+      }
+    },
+    "2": {
+      "brand": "Rebook",
+      "model": "ZigWild Tr 6",
+      "gender": "male",
+      "colors": ["black", "gray", "blue"],
+      "id": "2",
+      "price": 95,
+      "images": {
+        "black": ["https://m.media-amazon.com/images/I/81ednbVQKTL._AC_UX575_.jpg"],
+        "gray": ["https://m.media-amazon.com/images/I/81PJT1xnfPL._AC_SX575._SX._UX._SY._UY_.jpg"]
+      }
+    },
+    "3": {
+      "brand": "Rebook",
+      "model": "Classic Leather",
+      "gender": "female",
+      "colors": ["white"],
+      "id": "3",
+      "price": 50,
+      "images": {
+        "white": ["https://m.media-amazon.com/images/I/61s7vs6kZfL._AC_UY575_.jpg"]
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+#container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1.7rem;
+  box-sizing: border-box;
+}
+.productContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#sortBy {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  row-gap: 5px;
+}
+#sortMenu {
+  background-color: rgb(25, 25, 25);
+  display: flex;
+  flex-direction: column;
+  font-family: Mooli, sans-serif;
+  border-radius: 0.5rem;
+  padding: 10px;
+  color: white;
+}
+.sortOption {
+  padding: 5px 10px;
+  border-radius: 0.25rem;
+}
+.sortOption:hover {
+  background-color: rgb(34, 34, 34);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+@media screen and (max-width: 800px) {
+  #container div {
+    flex-grow: 1;
+    background-color: aliceblue;
+    border-radius: 0.5rem;
+  }
+  html {
+    font-size: 15px;
+  }
+}

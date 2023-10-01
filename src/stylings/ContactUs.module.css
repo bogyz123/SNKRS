@@ -1,0 +1,105 @@
+#container {
+  font-family: "Mooli", sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+#header {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: inherit;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 30vh;
+  padding-inline: 2rem;
+  background-color: rgba(4, 23, 42, 0.3);
+}
+#header h1,
+p {
+  margin-top: 15px;
+}
+#contactUs {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 2rem;
+  background-color: rgb(25, 25, 25);
+  gap: 1rem;
+  height: 100%;
+  color: white;
+}
+#rightElement {
+  grid-row: span 2;
+  border: 1px solid silver;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.leftElement {
+  padding: 3rem;
+  position: relative;
+  border: 1px solid silver;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.icon {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+}
+#number {
+  color: rgb(22, 125, 228);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+}
+.btn {
+  background-color: dodgerblue;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 0.25rem;
+  padding: 1rem 2rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn:hover {
+  background-color: rgb(92, 163, 234);
+}
+#rightElement h3 {
+  color: rgb(46, 46, 46);
+}
+#form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  width: 100%;
+}
+.formElement {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  row-gap: 7px;
+}
+@media screen and (max-width: 993px) {
+  #contactUs {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    padding: 10px;
+  }
+  #form {
+    grid-template-columns: 1fr 1fr;
+  }
+  html {
+    font-size: 14px;
+  }
+}

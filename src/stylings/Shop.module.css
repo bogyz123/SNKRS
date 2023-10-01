@@ -1,0 +1,60 @@
+#container {
+  height: 80%;
+  width: 80%;
+  margin: auto;
+  font-family: "Mooli", sans-serif;
+  display: flex;
+  background-color: aliceblue;
+  border-radius: 20px;
+  padding: 25px 45px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  row-gap: 10px;
+  background-color: rgb(16, 16, 16);
+  border: 1px solid silver;
+  box-sizing: border-box;
+}
+
+.brand {
+  color: white;
+  border-radius: 0.25rem;
+  height: fit-content;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 50px;
+  font-size: 2rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  position: relative;
+  display: flex;
+  animation: zoom-in-out 20s infinite ease; /* Use a longer duration to have a noticeable alternation */
+}
+#search {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  column-gap: 10px;
+}
+
+@keyframes zoom-in-out {
+  0%,
+  100% {
+    background-size: 100%;
+  }
+  50% {
+    background-size: 150%;
+  }
+}
+
+.brandName {
+  font-size: 2rem;
+  font-family: "Public Sans", sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  font-size: 50px;
+}
