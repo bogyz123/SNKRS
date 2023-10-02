@@ -1,8 +1,10 @@
 import { faClose, faDeleteLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "../stylings/Cart.module.css";
+import { useNavigate } from "react-router";
 
 export default function Cart({ cartItems, closeCart, cartTotal, removeItem }) {
+  const nav = useNavigate();
   return (
     <div id={styles.container}>
       {cartItems.length > 0 && (
@@ -23,15 +25,26 @@ export default function Cart({ cartItems, closeCart, cartTotal, removeItem }) {
                     <FontAwesomeIcon icon={faDeleteLeft} color="crimson" />
                   </div>
                 </div>
-                <span className="text-center">{item.color}</span>
+                <span className="text-center">{item.selectedColor}</span>
                 <hr className={styles.separator} />
               </div>
             ))}
             <div id={styles.subtotal}>
               <span>Total: ${cartTotal}</span>
             </div>
-            <button className="primary-btn" id={styles.purchaseBtn}>
-              Buy
+            <button
+              className="primary-btn"
+              id={styles.purchaseBtn}
+              onClick={() =>
+                nav("/checkout", {
+                  state: {
+                    products: cartItems,
+                    total: cartTotal,
+                  },
+                })
+              }
+            >
+              Purchase
             </button>
           </div>
           <div id={styles.close} onClick={closeCart}>

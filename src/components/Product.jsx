@@ -2,9 +2,9 @@ import styles from "../stylings/Product.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFemale, faPerson } from "@fortawesome/free-solid-svg-icons";
 
-export default function Product({ model, price, colors, thumbnail, gender }) {
+export default function Product({ model, price, colors, thumbnail, gender, theme, flexGrow }) {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${theme === "dark" ? styles.dark : styles.light} ${flexGrow && styles.grow}`}>
       <img src={thumbnail} className={`${styles.img} hoverable`} />
       <span className={styles.title}>{model}</span>
       <div>

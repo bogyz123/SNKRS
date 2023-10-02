@@ -9,12 +9,11 @@
   color: white;
 }
 #header {
-  background-color: crimson;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 5px 10px;
-  border-radius: 50px;
+  border-radius: 40px;
   margin-top: 2px;
   background: hsla(0, 0%, 6%, 1);
   background: linear-gradient(90deg, hsla(0, 0%, 6%, 1) 0%, hsla(240, 8%, 33%, 1) 52%, hsla(240, 3%, 85%, 1) 100%);

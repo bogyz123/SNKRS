@@ -30,12 +30,14 @@ export default function ProductData({ cartItems, addToCart }) {
       return;
     }
     if (!cartItems.some((current) => current.model === item.model)) {
+      // if cart doesnt have the same model added
       setError(null);
       const product = {
         model: item.model,
         brand: item.brand,
         price: item.price,
-        color: selectedColor,
+        colors: item.colors,
+        selectedColor: selectedColor,
         image: mainImage,
       };
       addToCart(product);

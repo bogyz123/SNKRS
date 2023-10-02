@@ -100,3 +100,15 @@ html,
     transform: translateY(0);
   }
 }
+.flex {
+  display: flex;
+}
+.gapY {
+  column-gap: 7px;
+}
+.centerX {
+  justify-content: center;
+}
+.centerY {
+  align-items: center;
+}

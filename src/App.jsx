@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import ProductData from "./components/ProductData";
 import ProductPage from "./components/ProductPage";
 import Shop from "./components/Shop";
+import Checkout from "./components/Checkout";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -31,6 +32,7 @@ function App() {
         <Route path="/shop/:brand" element={<ProductPage />} />
         <Route path="/shop/:brand/:model" element={<ProductData cartItems={cartItems} addToCart={addToCart} removeFromCart={removeFromCart} />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/checkout" element={<Checkout setCartItems={setCartItems} />} />
       </Routes>
       <div id="cart-portal" style={{ fontFamily: "Mooli" }} />
       <div id="status-portal" className="status" style={{ fontFamily: "Mooli" }} />
