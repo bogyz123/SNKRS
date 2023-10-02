@@ -30,8 +30,7 @@ export default function Shop() {
   return (
     <div id={styles.container}>
       <div id={styles.search} className="hoverable">
-        <input type="text" onChange={(e) => search(e.target.value)} className="input" style={{ width: "100%", background: "rgb(25,25,25)", color: "white" }} />
-        <FontAwesomeIcon icon={faSearch} color="white" />
+        <input placeholder="Search brand..." type="text" onChange={(e) => search(e.target.value)} className="input" style={{ width: "100%", background: "rgb(25,25,25)", color: "white" }} />
       </div>
       {currentData &&
         currentData.map((key) => (

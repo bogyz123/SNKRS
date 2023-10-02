@@ -1,14 +1,14 @@
 #container {
-  height: 80vh; /* Use viewport height instead of a percentage */
-  width: 80%; /* Keep width as a percentage */
+  height: 80vh;
+  width: 80%;
   margin: auto;
   font-family: "Mooli", sans-serif;
   display: flex;
   border-radius: 20px;
-  padding: 2rem; /* Adjust padding for the container */
+  padding: 2rem;
   flex-wrap: wrap;
   flex-direction: column;
-  gap: 10px; /* Use 'gap' instead of 'row-gap' */
+  gap: 10px;
   background-color: rgb(16, 16, 16);
   border: 1px solid silver;
   box-sizing: border-box;
@@ -17,19 +17,18 @@
 .brand {
   color: white;
   border-radius: 0.25rem;
-  max-width: 100%; /* Ensure the image doesn't exceed its container */
-  height: auto; /* Maintain aspect ratio */
+  max-width: 100%;
   cursor: pointer;
   transition: all 0.3s ease;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 2rem; /* Adjust padding for the .brand element */
+  padding: 2vw;
   font-size: 2rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   position: relative;
   display: flex;
-  animation: zoom-in-out 20s infinite ease; /* Use a longer duration to have a noticeable alternation */
+  animation: zoom-in-out 20s infinite ease;
   box-sizing: border-box;
 }
 

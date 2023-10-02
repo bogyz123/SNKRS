@@ -1,11 +1,11 @@
-import { faHamburger, faShop, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import ReactDOM from "react-dom";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 import styles from "../stylings/Navbar.module.css";
 import Cart from "./Cart";
-import ReactDOM from "react-dom";
 
 export default function Navbar({ cartItems, cartTotal, removeItem }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -55,7 +55,7 @@ export default function Navbar({ cartItems, cartTotal, removeItem }) {
         )}
       </ul>
       <div id={styles.menu}>
-        <FontAwesomeIcon icon={faHamburger} className="hoverable" id={styles.burger} onClick={toggleMenu} />
+        <FontAwesomeIcon icon={faBars} className="hoverable" id={styles.burger} onClick={toggleMenu} />
         {cartItems.length > 0 && (
           <>
             <FontAwesomeIcon onClick={toggleCart} icon={faShoppingCart} className="hoverable" />
@@ -68,7 +68,7 @@ export default function Navbar({ cartItems, cartTotal, removeItem }) {
           <span onClick={() => nav("/")}>Home</span>
           <span onClick={() => nav("/shop")}>Shop</span>
           <span onClick={() => nav("/contact")}>Contact</span>
-          <span onClick={() => nav("/pages")}>Pages</span>
+          <span onClick={() => nav("/help")}>Help</span>
           <span onClick={() => nav("/blog")}>Blog</span>
           <span onClick={() => nav("elements")}>Elements</span>
         </div>
