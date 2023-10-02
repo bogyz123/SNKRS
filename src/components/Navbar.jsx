@@ -39,7 +39,7 @@ export default function Navbar({ cartItems, cartTotal, removeItem }) {
           <Link to="/contact">Contact</Link>
         </li>
         <li>
-          <Link to="/pages">Pages</Link>
+          <Link to="/help">Help</Link>
         </li>
         <li>
           <Link to="/blog">Blog</Link>

@@ -112,3 +112,9 @@ html,
 .centerY {
   align-items: center;
 }
+.flexCol {
+  flex-direction: column;
+}
+.m-10 {
+  margin: 10px;
+}

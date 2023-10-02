@@ -5,7 +5,7 @@ import styles from "../stylings/Checkout.module.css";
 import Product from "./Product";
 import { useState } from "react";
 
-export default function Checkout({ setCartItems }) {
+export default function Checkout({ setCartItems, setCartTotal }) {
   const products = useLocation().state.products;
   const total = useLocation().state.total;
   const [purchased, setPurchased] = useState(false);
@@ -13,6 +13,7 @@ export default function Checkout({ setCartItems }) {
     // THIS IS A SIMULATION :)
     setPurchased(true);
     setCartItems([]);
+    setCartTotal(0);
   };
   return purchased ? (
     <div id={styles.purchased}>
