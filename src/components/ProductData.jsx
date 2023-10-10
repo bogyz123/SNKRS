@@ -1,4 +1,4 @@
-import { faArrowLeft, faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faCartShopping, faHeart, faV } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
@@ -11,6 +11,7 @@ export default function ProductData({ cartItems, addToCart }) {
   const [mainImage, setMainImage] = useState();
   const [selectedColor, setSelectedColor] = useState();
   const [error, setError] = useState();
+  const [favorited, setFavorited] = useState(false);
   const nav = useNavigate();
 
   useEffect(() => {
@@ -23,6 +24,16 @@ export default function ProductData({ cartItems, addToCart }) {
       }
     }
   }, [brand, model]);
+  useEffect(() => {
+    const key = localStorage.getItem("snkrs_favorites");
+    const array = JSON.parse(key);
+    if (Array.isArray(array)) {
+      const index = array.findIndex((prod) => prod.model === product.model);
+      if (index >= 0) {
+        setFavorited(true);
+      }
+    }
+  }, []);
 
   const addCart = (item) => {
     if (!selectedColor) {
@@ -30,7 +41,6 @@ export default function ProductData({ cartItems, addToCart }) {
       return;
     }
     if (!cartItems.some((current) => current.model === item.model)) {
-      // if cart doesnt have the same model added
       setError(null);
       const product = {
         model: item.model,
@@ -59,6 +69,18 @@ export default function ProductData({ cartItems, addToCart }) {
   const goBack = () => {
     nav("/shop");
   };
+  const toggleFavorite = () => {
+    setFavorited(!favorited);
+    var items = JSON.parse(localStorage.getItem("snkrs_favorites")) || {};
+
+    if (!favorited) {
+      items[product.model] = product;
+    } else {
+      delete items[product.model];
+    }
+
+    localStorage.setItem("snkrs_favorites", JSON.stringify(items));
+  };
 
   return (
     <div className={styles.container}>
@@ -78,9 +100,9 @@ export default function ProductData({ cartItems, addToCart }) {
           </div>
 
           <p className={styles.price}>${product.price}</p>
-
-          <div className={styles.addToCart}>
+          <div className={styles.controls}>
             <FontAwesomeIcon icon={faCartShopping} color="dodgerblue" size="lg" onClick={() => addCart(product)} />
+            <FontAwesomeIcon icon={faHeart} color={favorited ? "green" : "red"} className="hoverable" size="lg" onClick={toggleFavorite} />
           </div>
           {error && (
             <div style={{ color: "crimson" }}>

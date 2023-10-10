@@ -1,15 +1,16 @@
-import { useEffect, useState } from "react";
-import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
+import { useState } from "react";
+import { HashRouter, Route, Routes } from "react-router-dom";
+import Checkout from "./components/Checkout";
 import ContactUs from "./components/ContactUs";
+import FAQ from "./components/FAQ";
+import Favorites from "./components/Favorites";
+import Help from "./components/Help";
 import Homepage from "./components/Homepage";
 import Navbar from "./components/Navbar";
+import Policy from "./components/Policy";
 import ProductData from "./components/ProductData";
 import ProductPage from "./components/ProductPage";
 import Shop from "./components/Shop";
-import Checkout from "./components/Checkout";
-import Help from "./components/Help";
-import FAQ from "./components/FAQ";
-import Policy from "./components/Policy";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -36,6 +37,7 @@ function App() {
         <Route path="/shop/:brand/:model" element={<ProductData cartItems={cartItems} addToCart={addToCart} removeFromCart={removeFromCart} />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/checkout" element={<Checkout setCartItems={setCartItems} setCartTotal={setCartTotal} />} />
+        <Route path="/favorites" element={<Favorites />} />
         <Route path="/help" element={<Help />}>
           <Route path="/help/policy" element={<Policy />} />
           <Route path="/help/faq" element={<FAQ />} />

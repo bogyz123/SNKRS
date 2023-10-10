@@ -42,10 +42,7 @@ export default function Navbar({ cartItems, cartTotal, removeItem }) {
           <Link to="/help">Help</Link>
         </li>
         <li>
-          <Link to="/blog">Blog</Link>
-        </li>
-        <li>
-          <Link to="/elements">Elements</Link>
+          <Link to="/favorites">Favorites</Link>
         </li>
         {cartItems.length > 0 && (
           <li>
@@ -69,8 +66,7 @@ export default function Navbar({ cartItems, cartTotal, removeItem }) {
           <span onClick={() => nav("/shop")}>Shop</span>
           <span onClick={() => nav("/contact")}>Contact</span>
           <span onClick={() => nav("/help")}>Help</span>
-          <span onClick={() => nav("/blog")}>Blog</span>
-          <span onClick={() => nav("elements")}>Elements</span>
+          <span onClick={() => nav("/favorites")}>Favorites</span>
         </div>
       )}
       {cartOpened && ReactDOM.createPortal(<Cart cartItems={cartItems} closeCart={closeCart} cartTotal={cartTotal} removeItem={removeItem} />, document.getElementById("cart-portal"))}

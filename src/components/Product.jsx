@@ -1,8 +1,32 @@
 import styles from "../stylings/Product.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFemale, faPerson } from "@fortawesome/free-solid-svg-icons";
+import { faFemale, faPerson, faRemove } from "@fortawesome/free-solid-svg-icons";
 
-export default function Product({ model, price, colors, thumbnail, gender, theme, flexGrow }) {
+export default function Product({ model, price, colors, thumbnail, gender, theme, flexGrow, favorite }) {
+  const remove = () => {
+    const product = {
+      model: model,
+      price: price,
+      colors: colors,
+      thumbnail: thumbnail,
+      gender: gender,
+      theme: theme,
+      flexGrow: flexGrow,
+      favorite: favorite,
+    };
+    var items = JSON.parse(localStorage.getItem("snkrs_favorites")) || [];
+
+    var index = items.findIndex((prod) => prod.model === product.model);
+
+    if (index !== -1) {
+      items.splice(index, 1);
+    } else {
+      items.push(product);
+    }
+
+    // Update the 'snkrs_favorites' array in localStorage
+    localStorage.setItem("snkrs_favorites", JSON.stringify(items));
+  };
   return (
     <div className={`${styles.container} ${theme === "dark" ? styles.dark : styles.light} ${flexGrow && styles.grow}`}>
       <img src={thumbnail} className={`${styles.img} hoverable`} />
@@ -22,11 +46,20 @@ export default function Product({ model, price, colors, thumbnail, gender, theme
             <div>
               <FontAwesomeIcon icon={faPerson} color="dodgerblue" />
               <FontAwesomeIcon icon={faFemale} color="hotpink" />
+              {favorite && <FontAwesomeIcon icon={faRemove} color="red" className="hoverable" onClick={remove} />}
             </div>
           ) : gender === "female" ? (
-            <FontAwesomeIcon icon={faFemale} color="hotpink" />
+            <>
+              <FontAwesomeIcon icon={faFemale} color="hotpink" />
+              {favorite && <FontAwesomeIcon icon={faRemove} color="red" className="hoverable" onClick={remove} />}
+            </>
           ) : (
-            gender === "male" && <FontAwesomeIcon icon={faPerson} color="dodgerblue" />
+            gender === "male" && (
+              <>
+                <FontAwesomeIcon icon={faPerson} color="dodgerblue" />
+                {favorite && <FontAwesomeIcon icon={faRemove} color="red" className="hoverable" onClick={remove} />}
+              </>
+            )
           )}
         </div>
       </div>

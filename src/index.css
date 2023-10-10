@@ -59,6 +59,9 @@ html,
   text-decoration: none;
   color: dodgerblue;
 }
+html {
+  font-size: 14px;
+}
 .error {
   color: white;
   user-select: none;

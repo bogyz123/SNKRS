@@ -1,0 +1,11 @@
+#container {
+  font-family: Public Sans, sans-serif;
+  height: 100%;
+  color: white;
+  padding: 0 2rem;
+}
+#favorites {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}

@@ -80,11 +80,13 @@
   cursor: pointer;
   border: 1px solid gray;
 }
-.addToCart {
+.controls {
   margin-left: auto;
   cursor: pointer;
   margin-right: 15px;
   margin-bottom: 30px;
+  display: flex;
+  gap: 5px;
 }
 .goBack {
   position: absolute;
