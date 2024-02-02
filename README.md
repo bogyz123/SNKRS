@@ -1,8 +1,23 @@
-# React + Vite
+# SNKRS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+is a e-commerce dummy website where you can purchase your favorite sneakers! (Early build)
 
-Currently, two official plugins are available:
+## 🔗 Link
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The website can be accessed [here (bogyz123.github.io/SNKRS)](https://bogyz123.github.io/SNKRS/)
+
+## Tools used
+
+The tools I've used to build this are the following:
+
+- React
+- Firebase
+- Redux & Redux-Persist
+- EmailJS
+- StripeJS (work in progress)
+- Express (for stripe, also WIP.)
+
+## Todo (New)
+
+- Use lighter dummy images to load faster
+- Improve /cart page CSS
