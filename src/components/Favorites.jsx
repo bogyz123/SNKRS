@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "../stylings/Favorites.module.css";
 import Product from "./Product";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDeleteLeft } from "@fortawesome/free-solid-svg-icons";
 
 export default function Favorites() {
   const [favorites, setFavorites] = useState({});
@@ -35,11 +37,12 @@ export default function Favorites() {
       {Object.keys(favorites).length > 0 ? (
         <div id={styles.favorites}>
           {Object.values(favorites).map((product) => (
-            <div className="flex | flexCol | centerX | centerY" onClick={() => removeProduct(product)}>
-              <button className="primary-btn" style={{ width: "90%", background: "crimson", color: "white" }}>
-                Remove
-              </button>
-              <Product key={product.model} gender={product.gender} brand={product.brand} price={product.price} model={product.model} thumbnail={product.images[product.colors[0]][0]} colors={product.colors} />
+            <div className="flex | flexCol | centerX | centerY" onClick={() => removeProduct(product)} style={{ position: "relative" }}>
+              <Product key={product.model} gender={product.gender} brand={product.brand} price={product.price} model={product.model} thumbnail={product.images[product.colors[0]][0]} colors={product.colors}>
+                <div className="primary-btn" style={{ background: "white", border: "1px solid #ccc", width: "100%", position: "absolute", zIndex: "1000", right: "0", top: "0" }}>
+                  <FontAwesomeIcon icon={faDeleteLeft} />
+                </div>
+              </Product>
             </div>
           ))}
         </div>

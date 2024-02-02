@@ -2,7 +2,7 @@ import styles from "../stylings/Product.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFemale, faPerson, faRemove } from "@fortawesome/free-solid-svg-icons";
 
-export default function Product({ model, price, colors, thumbnail, gender, theme, flexGrow, favorite }) {
+export default function Product({ model, price, colors, thumbnail, gender, theme, flexGrow, favorite, children }) {
   const remove = () => {
     const product = {
       model: model,
@@ -47,17 +47,20 @@ export default function Product({ model, price, colors, thumbnail, gender, theme
               <FontAwesomeIcon icon={faPerson} color="dodgerblue" />
               <FontAwesomeIcon icon={faFemale} color="hotpink" />
               {favorite && <FontAwesomeIcon icon={faRemove} color="red" className="hoverable" onClick={remove} />}
+              {children}
             </div>
           ) : gender === "female" ? (
             <>
               <FontAwesomeIcon icon={faFemale} color="hotpink" />
               {favorite && <FontAwesomeIcon icon={faRemove} color="red" className="hoverable" onClick={remove} />}
+              {children}
             </>
           ) : (
             gender === "male" && (
               <>
                 <FontAwesomeIcon icon={faPerson} color="dodgerblue" />
                 {favorite && <FontAwesomeIcon icon={faRemove} color="red" className="hoverable" onClick={remove} />}
+                {children}
               </>
             )
           )}
