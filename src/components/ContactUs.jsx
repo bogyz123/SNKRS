@@ -30,10 +30,10 @@ export default function ContactUs() {
           <h2 className="text-center">Contact Us</h2>
           <p className="text-center">Contact Us</p>
           <div id={styles.details}>
-            <input placeholder="Name" type="text" className="input" />
-            <input placeholder="Email" type="email" className="input" />
-            <input placeholder="Phone" type="number" className="input" />
-            <textarea type="text" placeholder="Inquiry" className="input" />
+            <input placeholder="Name" type="text" className="input" style={{ background: "inherit" }} />
+            <input placeholder="Email" type="email" className="input" style={{ background: "inherit" }} />
+            <input placeholder="Phone" type="text" maxLength={14} defaultValue="+381 " className="input" style={{ background: "inherit" }} />
+            <textarea type="text" placeholder="Inquiry" className="input" style={{ background: "inherit" }} />
             <button className="button-primary primary-btn" style={{ color: "white", width: "100%" }} onClick={() => send()}>
               Submit
             </button>

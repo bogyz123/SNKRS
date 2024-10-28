@@ -43,8 +43,8 @@
 .previewImage {
   animation-name: fade;
   animation-duration: 1s;
-  max-width: 400px;
-  max-height: 400px;
+  max-width: 300px;
+  max-height: 300px;
   object-fit: cover;
 }
 @keyframes fade {

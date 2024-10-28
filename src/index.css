@@ -94,6 +94,10 @@ html {
   font-family: "Mooli", sans-serif;
   border: 1px solid gray;
   border-radius: 0.25rem;
+  color: white;
+}
+.input:focus {
+  border: 1px solid crimson;
 }
 @keyframes drop {
   from {

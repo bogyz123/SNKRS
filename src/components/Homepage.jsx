@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import shoe from "../images/Nike.png";
 import shoe2 from "../images/Shoe2.png";
-import shoe3 from "../images/Shoe3.jpg";
+import shoe3 from "../images/Shoe3.png";
 import styles from "../stylings/Homepage.module.css";
 
 export default function Homepage() {
@@ -15,7 +15,7 @@ export default function Homepage() {
     const MAX = images.length;
     const int = setInterval(() => {
       setSelectedImage((prevSelectedImage) => (prevSelectedImage + 1) % MAX);
-    }, 2000);
+    }, 3000);
 
     return () => {
       clearInterval(int);
