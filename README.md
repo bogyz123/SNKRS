@@ -21,3 +21,7 @@ The tools I've used to build this are the following:
 
 - Use lighter dummy images to load faster
 - Improve /cart page CSS
+- new logo
+- remake all animations
+- fix /shop positioning
+- maximize performance
