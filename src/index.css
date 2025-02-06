@@ -11,15 +11,20 @@ html,
   padding: 0;
   height: 100%;
   width: 100%;
-  background-image: url("./images/website_background.png");
   box-sizing: border-box;
+}
+body {
+  background-image: url("./images/website_background.png");
   background-size: 100% 100%;
   background-position: center;
   background-repeat: repeat;
+  background-size: cover;
+  background-position: center;
+  font-size: 16px;
 }
 
 .main-font {
-  font-family: "Mooli", sans-serif;
+  font-family: "Public Sans", sans-serif;
 }
 .hoverable {
   cursor: pointer;
@@ -28,25 +33,38 @@ html,
   text-align: center;
 }
 .primary-btn {
-  background: transparent;
   width: fit-content;
   padding: 0.65rem 2rem;
-  border: 1px solid white;
+  border:none;
   border-radius: 0.25rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-family: "Public Sans", sans-serif;
+  position: relative;
+  background:rgb(25,25,25);
+}
+.primary-btn::before {
+  content: "";
+  position: absolute;
+  inset:0;
+  background: conic-gradient(purple,rgb(76, 0, 255),purple,purple);
+  margin:-2px;
+  z-index:-1;
+  border-radius: .25rem;
 }
 .primary-btn:hover {
-  background-color: #ccc;
+  background-color: rgb(30,30,30);
 }
 .fade {
-  animation: fade 0.7s ease;
+  animation: fade 1s ease;
 }
 @keyframes fade {
   from {
     opacity: 0;
+    transform:translateX(30px);
   }
   to {
+    transform:translateX(0);
     opacity: 1;
   }
 }
@@ -121,6 +139,9 @@ html {
 }
 .flexCol {
   flex-direction: column;
+}
+.between {
+  justify-content: space-between;
 }
 .m-10 {
   margin: 10px;

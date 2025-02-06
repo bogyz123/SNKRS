@@ -7,7 +7,7 @@ export default function Help() {
     <div id={styles.container}>
       <Outlet />
       <div className="flex | flexCol | m-10">
-        <h3 className="text-center">Links</h3>
+        <h3 className="text-center">Need help?</h3>
         <Link to="/help/faq" className="link">
           FAQ
         </Link>

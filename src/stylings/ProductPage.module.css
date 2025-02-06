@@ -7,12 +7,16 @@
   padding: 1rem 1.7rem;
   box-sizing: border-box;
 }
+#container div {
+  flex-grow:1;
+}
 .productContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 #sortBy {
   display: flex;
   flex-direction: column;
@@ -22,11 +26,11 @@
 #sortMenu {
   background-color: rgb(25, 25, 25);
   display: flex;
-  flex-direction: column;
   font-family: Mooli, sans-serif;
   border-radius: 0.5rem;
   padding: 10px;
   color: white;
+  font-size: .9rem;
 }
 .sortOption {
   padding: 5px 10px;
@@ -38,11 +42,6 @@
   transition: all 0.3s ease;
 }
 @media screen and (max-width: 800px) {
-  #container div {
-    flex-grow: 1;
-    background-color: aliceblue;
-    border-radius: 0.5rem;
-  }
   html {
     font-size: 15px;
   }

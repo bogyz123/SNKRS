@@ -35,25 +35,35 @@
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 900;
   font-size: 1.5rem;
+ 
+}
+#introduction button {
+  margin-left:auto;
+  width: 85%;
+  margin-top: 15px;
 }
 #introduction p {
   font-family: "Mooli", sans-serif;
   font-size: 1rem;
 }
-.previewImage {
-  animation-name: fade;
-  animation-duration: 1s;
-  max-width: 300px;
-  max-height: 300px;
-  object-fit: cover;
+#introduction h1 {
+  margin:5px;
 }
-@keyframes fade {
-  from {
-    width: 25px;
-    opacity: 0;
-  }
+#introduction h1 {
+  animation: dashIn 1s linear both;
+  transform:translateX(-50px);
+  background:linear-gradient(to bottom right, crimson,purple);
+  background-clip: text;
+  color:transparent;
+}
+@keyframes dashIn {
   to {
-    width: 100%;
-    opacity: 1;
+    transform:translateX(0);
   }
+}
+
+.previewImage {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
 }

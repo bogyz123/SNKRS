@@ -5,8 +5,8 @@
   user-select: none;
   align-items: center;
   position: relative;
-  background-color: transparent;
   color: white;
+  justify-content: center;
 }
 #header {
   display: flex;
@@ -15,11 +15,30 @@
   padding: 5px 10px;
   border-radius: 40px;
   margin-top: 2px;
-  background: hsla(0, 0%, 6%, 1);
-  background: linear-gradient(90deg, hsla(0, 0%, 6%, 1) 0%, hsla(240, 8%, 33%, 1) 52%, hsla(240, 3%, 85%, 1) 100%);
-  background: -moz-linear-gradient(90deg, hsla(0, 0%, 6%, 1) 0%, hsla(240, 8%, 33%, 1) 52%, hsla(240, 3%, 85%, 1) 100%);
-  background: -webkit-linear-gradient(90deg, hsla(0, 0%, 6%, 1) 0%, hsla(240, 8%, 33%, 1) 52%, hsla(240, 3%, 85%, 1) 100%);
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#101010", endColorstr="#4E4E5B", GradientType=1 );
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+#header img {
+  width: 100px;
+  height: 100px;
+}
+#menu {
+  display: flex;
+  flex-direction: column;
+}
+.cartContainer {
+  animation: appear 1s ease-out both;
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 #header h2 {
   margin: 0;
@@ -42,30 +61,50 @@ li a {
   color: white;
   text-decoration: none;
 }
-#burger {
-  margin-right: 1rem;
-}
-#menu {
+#burgerContainer {
   display: none;
-  padding-right: 5px;
-}
-#menuContent {
   position: absolute;
-  background-color: black;
-  top: 3rem;
-  right: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1.5rem;
-  border-radius: 0.25rem;
-  row-gap: 10px;
-  z-index: 5;
+  right: 2rem;
+  top: 2rem;
 }
-#menuContent span {
-  color: white;
+#burger {
   cursor: pointer;
+}
+#burgerContent {
+  flex-direction: column;
+  background: rgb(25,25,25);
+  border-radius: 5px;
+  padding: 2rem;
+  z-index: 100;
+  width: 100%;
+  display: flex;
+  animation: slideIn 0.5s ease forwards;
+  opacity: 0;
+  transform: translateX(100%);
+  overflow: hidden;
+  position: relative;
+}
+#burgerContent div *{
+  text-decoration: none;
+  color: white;
+}
+.burgerClose {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  border-radius: 50px;
+  border: 1px solid gray;
+  padding: 5px;
+  cursor: pointer;
+}
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+#burgerContent div {
+  text-decoration: none;
 }
 .cartLength {
   color: green;
@@ -78,7 +117,7 @@ li a {
   ul {
     display: none;
   }
-  #menu {
+  #burgerContainer {
     display: flex;
   }
   #header {
@@ -87,5 +126,6 @@ li a {
   #container {
     justify-content: space-between;
     width: 100%;
+    position: static;
   }
 }

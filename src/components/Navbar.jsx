@@ -1,19 +1,22 @@
-import { faBars, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faBurger, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import ReactDOM from "react-dom";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
+import bg from "../images/bg.png";
 import styles from "../stylings/Navbar.module.css";
 import Cart from "./Cart";
 
 export default function Navbar({ cartItems, cartTotal, removeItem }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [cartOpened, setCartOpened] = useState(false);
+  const nav = useNavigate();
+
+
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-  const nav = useNavigate();
   const toggleCart = () => {
     setCartOpened(!cartOpened);
   };
@@ -23,10 +26,8 @@ export default function Navbar({ cartItems, cartTotal, removeItem }) {
 
   return (
     <div id={styles.container} className="main-font">
-      <div id={styles.header}>
-        <h2 className="hoverable" onClick={() => nav("/")}>
-          SNKRS
-        </h2>
+      <div id={styles.header} onClick={() => nav("/")}>
+        <img src={bg} />
       </div>
       <ul>
         <li>
@@ -44,31 +45,58 @@ export default function Navbar({ cartItems, cartTotal, removeItem }) {
         <li>
           <Link to="/favorites">Favorites</Link>
         </li>
+        <div>
         {cartItems.length > 0 && (
-          <li>
+          <div className={styles.cartContainer}>
             <FontAwesomeIcon icon={faShoppingCart} className="hoverable" onClick={toggleCart} />
             <span className={styles.cartLength}>{cartItems.length}</span>
-          </li>
+          </div>
         )}
-      </ul>
-      <div id={styles.menu}>
-        <FontAwesomeIcon icon={faBars} className="hoverable" id={styles.burger} onClick={toggleMenu} />
-        {cartItems.length > 0 && (
-          <>
-            <FontAwesomeIcon onClick={toggleCart} icon={faShoppingCart} className="hoverable" />
-            <span className={styles.cartLength}>{cartItems.length}</span>
-          </>
-        )}
-      </div>
-      {menuOpen && (
-        <div id={styles.menuContent}>
-          <span onClick={() => nav("/")}>Home</span>
-          <span onClick={() => nav("/shop")}>Shop</span>
-          <span onClick={() => nav("/contact")}>Contact</span>
-          <span onClick={() => nav("/help")}>Help</span>
-          <span onClick={() => nav("/favorites")}>Favorites</span>
         </div>
-      )}
+        
+      </ul>
+      <div id={styles.burgerContainer}>
+        <div id={styles.burger} style={{display: menuOpen ? "none" : "flex"}}>
+        {cartItems.length > 0 && (
+          <div className={styles.cartContainer}>
+            <FontAwesomeIcon icon={faShoppingCart} className="hoverable" onClick={toggleCart} />
+            <span className={styles.cartLength}>{cartItems.length}</span>
+          </div>
+        )}
+          <FontAwesomeIcon icon={faBurger} onClick={toggleMenu}/>
+        </div>
+      </div>
+      <div 
+  id={styles.burgerContent} 
+  style={{
+    display: menuOpen ? 'flex' : 'none'
+  }}
+>
+  
+  <div className={styles.burgerClose} onClick={toggleMenu}>X</div>
+          <div>
+          <Link to=''>Homepage</Link>
+          </div>
+          <div>
+          <Link to='/shop'>Shop</Link>
+          </div>
+          <div>
+          <Link to='/contact'>Contact Us</Link>
+          </div>
+          <div>
+          <Link to='/help'>Help</Link>
+          </div>
+          <div>
+          <Link to='/favorites'>Favorites</Link>
+          </div>
+          <div>
+            
+          </div>
+          <div>
+         
+          </div>
+        </div>
+     
       {cartOpened && ReactDOM.createPortal(<Cart cartItems={cartItems} closeCart={closeCart} cartTotal={cartTotal} removeItem={removeItem} />, document.getElementById("cart-portal"))}
     </div>
   );

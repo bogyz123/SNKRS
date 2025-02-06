@@ -15,7 +15,7 @@ export default function Homepage() {
     const MAX = images.length;
     const int = setInterval(() => {
       setSelectedImage((prevSelectedImage) => (prevSelectedImage + 1) % MAX);
-    }, 3000);
+    }, 5000);
 
     return () => {
       clearInterval(int);
@@ -26,9 +26,9 @@ export default function Homepage() {
     <div id={styles.container} className="main-font">
       <div id={styles.introduction}>
         <p>Sneaker Collection</p>
-        <h1>
-          GOOD SHOES <br /> TAKE YOU <br /> GOOD PLACES
-        </h1>
+        <h1>GOOD SHOES</h1>
+        <h1 style={{marginLeft:'15px', animationDelay: '100ms'}}>TAKE YOU</h1>
+        <h1 style={{marginLeft:'35px', animationDelay:'150ms'}}>GOOD PLACES</h1>
         <button className="primary-btn" onClick={() => nav("/shop")} style={{ color: "white" }}>
           Shop Now
         </button>
@@ -38,7 +38,7 @@ export default function Homepage() {
       </div>
       <ul id={styles.shoeSlider}>
         {images.map((image, index) => (
-          <li key={index} onClick={() => handleSlider(index)} className="hoverable" style={{ color: index == selectedImage && "blue" }}>
+          <li key={index} onClick={() => handleSlider(index)} className="hoverable" style={{ color: index == selectedImage && "crimson" }}>
             O
           </li>
         ))}

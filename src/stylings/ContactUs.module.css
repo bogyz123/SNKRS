@@ -1,32 +1,80 @@
-#container {
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+}
+.innerContainer {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  margin:auto;
+  overflow-x: hidden;
+
+}
+.sectionOne {
   display: flex;
   flex-direction: column;
-  width: 80%;
-  margin: auto;
-  background-color: rgb(25, 25, 25);
+  color:white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: clamp(22px, 2vw, 30px);
+  flex-grow: 1;
+  justify-content: center;
+
+}
+.sectionOne h1, span {
+  margin:3px;
+  animation: fromLeft 0.5s ease forwards;
+  transform: translateX(-500px);
+}
+@keyframes fromLeft {
+  to {
+    transform: translateX(0);
+  }
+}
+.sectionTwo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 3;
+  gap: 6px;
+  animation: fromLeft 1s ease forwards;
+  transform: translateX(500px);
+}
+.sectionTwo button {
+  all:unset;
+  cursor: pointer;
   color: white;
-  font-family: Public Sans, sans-serif;
-  padding: 0.7rem 1.3rem;
+  font-weight: bolder;
+  font-family:monospace;
+  margin-left:auto;
 }
-#details {
-  display: flex;
+.sectionTwo input {
+  all: unset;
+  border-bottom: 1px solid gray;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background:inherit;
+  color:white;
+  padding:20px;
+}
+.sectionTwo input::placeholder {
+  color:gray;
+}
+.sectionOne h1:nth-child(2) {
+  color:transparent;
+  -webkit-text-stroke: 2px white;
+}
+@keyframes fromLeft {
+  to {
+    transform: translateX(0);
+  }
+}
+@media screen and (max-width: 857px) {
+.innerContainer {
   flex-direction: column;
-  row-gap: 10px;
 }
-.test {
-  animation: test 1s ease forwards;
+.sectionOne {
+  justify-content: center;
+  align-items: center;
 }
-.icon {
-  position: absolute;
-}
-@keyframes test {
-  0% {
-    transform: scaleX(1);
-  }
-  50% {
-    transform: scaleX(0);
-  }
-  100% {
-    transform: scaleX(1);
-  }
 }

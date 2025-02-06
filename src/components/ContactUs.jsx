@@ -1,45 +1,28 @@
 import { useState } from "react";
 import styles from "../stylings/ContactUs.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck, faMailBulk, faMessage } from "@fortawesome/free-solid-svg-icons";
 
 export default function ContactUs() {
-  const [animation, setAnimation] = useState("");
-  const [visible, setVisible] = useState(false);
-
-  const send = () => {
-    setAnimation("test");
-    setTimeout(() => {
-      setVisible(true);
-    }, 400);
-  };
+  const [mailSent, setMailSent] = useState(false);
+  const submitEmail = () => {
+    setMailSent(true);
+  }
   return (
-    <div id={styles.container} className={`${styles[animation]}`}>
-      {visible ? (
-        <>
-          <div>
-            <FontAwesomeIcon icon={faCheck} color="green" />
-          </div>
-          <p className="text-center">Your inquiry is being processed! Check your mailbox within couple of hours.</p>
-        </>
-      ) : (
-        <>
-          <div className={styles.icon}>
-            <FontAwesomeIcon icon={faMessage} />
-          </div>
-          <h2 className="text-center">Contact Us</h2>
-          <p className="text-center">Contact Us</p>
-          <div id={styles.details}>
-            <input placeholder="Name" type="text" className="input" style={{ background: "inherit" }} />
-            <input placeholder="Email" type="email" className="input" style={{ background: "inherit" }} />
-            <input placeholder="Phone" type="text" maxLength={14} defaultValue="+381 " className="input" style={{ background: "inherit" }} />
-            <textarea type="text" placeholder="Inquiry" className="input" style={{ background: "inherit" }} />
-            <button className="button-primary primary-btn" style={{ color: "white", width: "100%" }} onClick={() => send()}>
-              Submit
-            </button>
-          </div>
-        </>
-      )}
+    <div className={styles.container}>
+     <div className={styles.innerContainer}>
+      <div className={styles.sectionOne}>
+        <h1>LET'S GET</h1>
+        <h1>
+          IN CONTACT
+          <span style={{color:'crimson', WebkitTextStroke:'0'}}>!</span>
+        </h1>
+      </div>
+      <div className={styles.sectionTwo}>
+        <input type="text" name="" id="" placeholder="Name" />
+        <input type="text" name="" id="" placeholder="Email" />
+        <input type="text" name="" id="" placeholder="Hello, I wanted to tell you that..." />
+       <button onClick={() => submitEmail()}>{`LET'S ROCK ->`}</button>
+      </div>
+     </div>
     </div>
   );
 }

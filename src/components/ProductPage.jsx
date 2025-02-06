@@ -1,10 +1,8 @@
-import { useNavigate, useParams } from "react-router";
-import products from "./products.json";
-import Product from "./Product";
-import styles from "../stylings/ProductPage.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSort } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import { useNavigate, useParams } from "react-router";
+import styles from "../stylings/ProductPage.module.css";
+import Product from "./Product";
+import products from "./products.json";
 
 export default function ProductPage() {
   const { brand } = useParams();
@@ -14,9 +12,6 @@ export default function ProductPage() {
   const nav = useNavigate();
   const navigate = (to) => {
     nav(to);
-  };
-  const toggleSort = () => {
-    setVisible(!visible);
   };
   const sort = (by) => {
     switch (by) {
@@ -71,8 +66,7 @@ export default function ProductPage() {
   return (
     <>
       <div id={styles.sortBy}>
-        <FontAwesomeIcon icon={faSort} color="white" style={{ height: "23px" }} className="hoverable" onClick={toggleSort} />
-        {visible && (
+        {(
           <div id={styles.sortMenu}>
             <div className={styles.sortOption} onClick={() => sort("price-ascending")}>
               Price Ascending
@@ -93,7 +87,7 @@ export default function ProductPage() {
         {currentData &&
           currentData.map((product) => (
             <div key={product.id} onClick={() => navigate(`/shop/${brand}/${product.id}`)} className={`${styles.productContainer} drop-animation`}>
-              <Product gender={product.gender} brand={product.brand} price={product.price} model={product.model} thumbnail={product.images[product.colors[0]][0]} colors={product.colors} />
+              <Product theme="rgb(230,230,230)" gender={product.gender} brand={product.brand} price={product.price} model={product.model} thumbnail={product.images[product.colors[0]][0]} colors={product.colors} />
             </div>
           ))}
       </div>

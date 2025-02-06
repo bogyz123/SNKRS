@@ -1,21 +1,22 @@
 import styles from "../stylings/Product.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFemale, faPerson, faRemove } from "@fortawesome/free-solid-svg-icons";
+import { useEffect } from "react";
 
-export default function Product({ model, price, colors, thumbnail, gender, theme, flexGrow, favorite, children }) {
+
+export default function Product({ model, price, colors, thumbnail, gender, favorite, children, theme }) {
   const remove = () => {
     const product = {
       model: model,
       price: price,
       colors: colors,
       thumbnail: thumbnail,
-      gender: gender,
+      gender: gender, 
       theme: theme,
-      flexGrow: flexGrow,
       favorite: favorite,
     };
+   
     var items = JSON.parse(localStorage.getItem("snkrs_favorites")) || [];
-
     var index = items.findIndex((prod) => prod.model === product.model);
 
     if (index !== -1) {
@@ -24,11 +25,11 @@ export default function Product({ model, price, colors, thumbnail, gender, theme
       items.push(product);
     }
 
-    // Update the 'snkrs_favorites' array in localStorage
     localStorage.setItem("snkrs_favorites", JSON.stringify(items));
   };
+
   return (
-    <div className={`${styles.container} ${theme === "dark" ? styles.dark : styles.light} ${flexGrow && styles.grow}`}>
+    <div className={`${styles.container}`} style={{background: theme}}>
       <img src={thumbnail} className={`${styles.img} hoverable`} />
       <span className={styles.title}>{model}</span>
       <div>

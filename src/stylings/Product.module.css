@@ -4,21 +4,16 @@
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
-  font-family: "Mooli", sans-serif;
+  font-family: "Public Sans", sans-serif;
   position: relative;
   transition: all 0.3s ease;
   justify-content: center;
   align-items: center;
   margin: 5px;
-  width: fit-content;
-}
-.dark {
-  background-color: rgb(25, 25, 25);
-  color: white;
-}
-.light {
-  background-color: white;
-  color: black;
+  width: fit-content; 
+  flex-grow: 1;
+  width: 100%;
+  clip-rule: pointer;
 }
 
 .container:hover {

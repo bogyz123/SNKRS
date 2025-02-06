@@ -17,8 +17,8 @@ export default function Cart({ cartItems, closeCart, cartTotal, removeItem }) {
                 <img src={item.image.url} alt={item.model} className={styles.itemImg} />
 
                 <div className={styles.metadata}>
-                  <span style={{ color: "orangered" }}>
-                    $<span style={{ color: "black" }}>{item.price}</span>
+                  <span style={{ color: "crimson" }}>
+                    $<span style={{ color: "white" }}>{item.price}</span>
                   </span>
 
                   <div className="hoverable" onClick={() => removeItem(item)}>

@@ -12,6 +12,7 @@
   background-color: rgb(16, 16, 16);
   border: 1px solid silver;
   box-sizing: border-box;
+  background-color: rgb(16, 16, 16);
 }
 
 .brand {
@@ -28,7 +29,7 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   position: relative;
   display: flex;
-  animation: zoom-in-out 20s infinite ease;
+  animation: zoom-in-out 10s ease both;
   box-sizing: border-box;
 }
 
@@ -40,13 +41,12 @@
 }
 
 @keyframes zoom-in-out {
-  0%,
-  100% {
-    background-size: 100%;
-  }
-  50% {
-    background-size: 150%;
-  }
+ from {
+  background-size: 100%;
+ }
+ to {
+  background-size: 150%;
+ }
 }
 
 .brandName {

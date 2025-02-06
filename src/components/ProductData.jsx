@@ -9,7 +9,7 @@ export default function ProductData({ cartItems, addToCart }) {
   const { brand, model } = useParams();
   const [product, setProduct] = useState(null);
   const [mainImage, setMainImage] = useState();
-  const [selectedColor, setSelectedColor] = useState();
+  const [selectedColor, setSelectedColor] = useState(product?.colors[0]);
   const [error, setError] = useState();
   const [favorited, setFavorited] = useState(false);
   const nav = useNavigate();
@@ -26,18 +26,21 @@ export default function ProductData({ cartItems, addToCart }) {
   }, [brand, model]);
   useEffect(() => {
     const key = localStorage.getItem("snkrs_favorites");
-    const array = JSON.parse(key);
-    if (Array.isArray(array)) {
-      const index = array.findIndex((prod) => prod.model === product.model);
-      if (index >= 0) {
-        setFavorited(true);
+    if (key) {
+      const array = JSON.parse(key);
+      if (Array.isArray(array)) {
+        const index = array.findIndex((prod) => prod.model === product.model);
+        if (index >= 0) {
+          setFavorited(true);
+        }
       }
     }
-  }, []);
+  }, [product]); 
+  
 
   const addCart = (item) => {
     if (!selectedColor) {
-      setError("Please select your shoes color first.");
+      setError("Please select your shoe color first.");
       return;
     }
     if (!cartItems.some((current) => current.model === item.model)) {
@@ -51,6 +54,7 @@ export default function ProductData({ cartItems, addToCart }) {
         image: mainImage,
       };
       addToCart(product);
+
     } else {
       setError("Already added.");
     }
@@ -70,7 +74,7 @@ export default function ProductData({ cartItems, addToCart }) {
     nav("/shop");
   };
   const toggleFavorite = () => {
-    setFavorited(!favorited);
+    
     var items = JSON.parse(localStorage.getItem("snkrs_favorites")) || {};
 
     if (!favorited) {
@@ -78,7 +82,7 @@ export default function ProductData({ cartItems, addToCart }) {
     } else {
       delete items[product.model];
     }
-
+    setFavorited(!favorited);
     localStorage.setItem("snkrs_favorites", JSON.stringify(items));
   };
 
@@ -101,7 +105,10 @@ export default function ProductData({ cartItems, addToCart }) {
 
           <p className={styles.price}>${product.price}</p>
           <div className={styles.controls}>
+            <div className={styles.addToCartContainer}>
             <FontAwesomeIcon icon={faCartShopping} color="dodgerblue" size="lg" onClick={() => addCart(product)} />
+   
+            </div>
             <FontAwesomeIcon icon={faHeart} color={favorited ? "green" : "red"} className="hoverable" size="lg" onClick={toggleFavorite} />
           </div>
           {error && (
