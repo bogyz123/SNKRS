@@ -5,6 +5,9 @@ export default function ContactUs() {
   const [mailSent, setMailSent] = useState(false);
   const submitEmail = () => {
     setMailSent(true);
+    setTimeout(() => {
+      setMailSent(false); 
+    }, 2000); 
   }
   return (
     <div className={styles.container}>
@@ -22,6 +25,7 @@ export default function ContactUs() {
         <input type="text" name="" id="" placeholder="Hello, I wanted to tell you that..." />
        <button onClick={() => submitEmail()}>{`LET'S ROCK ->`}</button>
       </div>
+       <div className={styles.sent} style={{display: mailSent ? "block" : "none" }}>Your email has been sent successfully!</div>
      </div>
     </div>
   );

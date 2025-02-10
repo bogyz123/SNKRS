@@ -19,6 +19,51 @@
   height: 100px;
   cursor: pointer;
 }
+.linksContainer li {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.linksContainer li {
+  --border-right: 3px;
+  --text-stroke-color: rgba(255,255,255,0.6);
+  --animation-color: #37FF8B;
+  --fs-size: 1.3em;
+  
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+.linksContainer {
+ gap: 10px; 
+}
+.linksContainer li span:nth-child(2) {
+  position: absolute;
+  box-sizing: border-box;
+  color: var(--animation-color);
+  width: 0%;
+  left: -10px;
+  top: -3px;
+
+  overflow: hidden;
+  transition: width 0.5s ease;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+
+.linksContainer li:hover span:nth-child(2) {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color));
+}
+
 #header img {
   width: 100px;
   height: 100px;
@@ -84,7 +129,7 @@ li a {
   overflow: hidden;
   position: relative;
 }
-#burgerContent div *{
+#burgerContent div * {
   text-decoration: none;
   color: white;
 }
@@ -93,8 +138,8 @@ li a {
   right: 1rem;
   top: 1rem;
   border-radius: 50px;
-  border: 1px solid gray;
   padding: 5px;
+  border: 1px solid gray;
   cursor: pointer;
 }
 @keyframes slideIn {

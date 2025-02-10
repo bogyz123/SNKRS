@@ -1,4 +1,4 @@
-import { faBurger, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import ReactDOM from "react-dom";
@@ -29,21 +29,26 @@ export default function Navbar({ cartItems, cartTotal, removeItem }) {
       <div id={styles.header} onClick={() => nav("/")}>
         <img src={bg} />
       </div>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
+      <ul className={styles.linksContainer}>
+        <li data-text="Home" onClick={() => nav("/")}>
+          <span><Link to="/">Home</Link></span>
+          <span aria-hidden="true" className="hover-text">&nbsp;Home&nbsp;</span>
         </li>
-        <li>
-          <Link to="/shop">Shop</Link>
+        <li data-text="Shop" onClick={() => nav("/shop")}>
+         <span> <Link to="/shop">Shop</Link></span>
+          <span aria-hidden="true" className="hover-text">&nbsp;Shop&nbsp;</span>
         </li>
-        <li>
-          <Link to="/contact">Contact</Link>
+        <li data-text="Contact" onClick={()=>nav("/contact")}>
+         <span><Link to="/contact">Contact</Link></span>
+          <span aria-hidden="true" className="hover-text">&nbsp;Contact&nbsp;</span>
         </li>
-        <li>
-          <Link to="/help">Help</Link>
+        <li data-text="Help" onClick={() => nav("/help")}>
+         <span> <Link to="/help">Help</Link></span>
+          <span aria-hidden="true" className="hover-text">&nbsp;Help&nbsp;</span>
         </li>
-        <li>
-          <Link to="/favorites">Favorites</Link>
+        <li data-text="Favorites" onClick={() => nav("/favorites")}>
+          <span><Link to="/favorites">Favorites</Link></span>
+          <span aria-hidden="true" className="hover-text">&nbsp;Favorites&nbsp;</span>
         </li>
         <div>
         {cartItems.length > 0 && (
@@ -63,7 +68,7 @@ export default function Navbar({ cartItems, cartTotal, removeItem }) {
             <span className={styles.cartLength}>{cartItems.length}</span>
           </div>
         )}
-          <FontAwesomeIcon icon={faBurger} onClick={toggleMenu}/>
+          <FontAwesomeIcon icon={faBars} onClick={toggleMenu} size="lg"/>
         </div>
       </div>
       <div 
@@ -89,11 +94,7 @@ export default function Navbar({ cartItems, cartTotal, removeItem }) {
           <div>
           <Link to='/favorites'>Favorites</Link>
           </div>
-          <div>
-            
-          </div>
-          <div>
-         
+          <div>    
           </div>
         </div>
      

@@ -4,7 +4,19 @@
   border-radius: 0.35rem;
   margin: 0 auto;
   color: white;
-  font-family: "Public Sans", sans-serif;
+  font-family: Montserrat, sans-serif;
   padding: 0.5rem 1rem;
   margin-top: 4rem;
+}
+.link {
+  margin-block: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  color: crimson;
+  text-decoration: none;
+  font-family: Montserrat, sans-serif;
+  background: linear-gradient(to bottom, rgb(30,30,30) 70%, rgb(41, 41, 41));
+  border: 1px solid rgb(43, 43, 43);
+  cursor: pointer;
+  
 }
